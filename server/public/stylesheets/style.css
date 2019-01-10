@@ -16,6 +16,14 @@ body {
   margin: auto;
 }
 
+.btn {
+  font-size: 15px;
+}
+
+.btn:hover {
+  background-color: lightblue;
+}
+
 .tittle {
   font-family: "Lobster", cursive;
   color: black;
@@ -34,10 +42,29 @@ li {
   background-color: rgba(255, 228, 196, 0.473);
   width: 250px;
   height: 300px;
-  border: 2px solid white;
-  margin: 5px;
+  border: 3px solid white;
+  margin: 6px;
   text-align: center;
   padding: 5px;
+  cursor: pointer;
+}
+
+li:hover {
+  border: 3px solid #55bb55;
+}
+
+#thebook {
+  text-align: center;
+  margin: auto;
+  width: 900px;
+  height: auto;
+  border: 2px solid white;
+  background-color: rgba(255, 228, 196, 0.514);
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#thebook h1 {
+  font-family: "Lobster", cursive;
 }
 
 /*# sourceMappingURL=style.css.map */

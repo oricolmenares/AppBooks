@@ -1,10 +1,10 @@
 const urlParams = new URLSearchParams(window.location.search);
-const isbn = urlParams.get("isbn");
+const id = urlParams.get("id");
 
 
-$.ajax('/api/books/' + isbn)
+$.ajax('/api/books/' + id)
   .done(function (data) {
-    $('#book').append(`
+    $('#thebook').append(`
       <img src="${data.cover}"/>
       <h1>${data.title}</h1>
       <p>${data.subtitle}</p>

@@ -3,14 +3,15 @@ const elSearch = urlParams.get("search");
 
 
 $.ajax('http://localhost:3000/api/books?search=' + elSearch)
-    .done(function(data){ 
-        for (var i = 0; i < data.length; i++){
-        $('#books').append(`
+    .done(function (data) {
+        for (var i = 0; i < data.length; i++) {
             
-            <li>
-            <img src= "${data[i].cover}">
-            <p>${data[i].title}</p> 
-            <p>${data[i].authors}</p>
+            $('#books').append(`
+            
+            <li data-bookid=${data[i].id}>
+                <img src= "${data[i].cover}">
+                <p>${data[i].title}</p> 
+                <p>${data[i].authors}</p>
             </li>
             
         `)
@@ -18,8 +19,9 @@ $.ajax('http://localhost:3000/api/books?search=' + elSearch)
     })
 
 $(document).on('click', 'li', function () {
-    const isbn = $(this).attr('id');
-    location.href = '/detalle?isbn=' + isbn;
-  })    
+    const id = $(this).attr('data-bookid');
+    console.log(id)
+    location.href = '/books/detalle?id=' + id;
+})
 
 
